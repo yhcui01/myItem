@@ -1,0 +1,85 @@
+.frist_newperson {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  height: 12rem;
+  width: 100%;
+  border-bottom: 0.3rem solid #eee;
+}
+.frist_newperson h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+.frist_newperson .left {
+  height: 8rem;
+  background: #f9e9cf;
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  border-right: 0.1rem solid #fff;
+}
+.frist_newperson .left h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+.frist_newperson .left img {
+  margin: 1rem auto;
+  height: 5rem;
+  width: 5rem;
+}
+.frist_newperson .right {
+  padding: 0.2rem;
+  height: 4rem;
+  background: #fbe2d3;
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  border-bottom: 0.1rem solid #fff;
+}
+.frist_newperson .right h3 {
+  float: left;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+.frist_newperson .right img {
+  float: right;
+  top: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.frist_newperson .brand_header {
+  overflow: hidden;
+}
+.frist_newperson .brand_header .left_text {
+  float: left;
+}
+.frist_newperson .brand_header .right_text {
+  float: right;
+}
+.type_area {
+  padding: 0.5rem;
+  height: 85%;
+  box-sizing: border-box;
+}
+.btn {
+  background: #f00;
+  color: #fff;
+  text-align: center;
+  height: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+}
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  .border-1px::before {
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-device-pixel-ratio: 3) {
+  .border-1px::before {
+    transform: scaleY(0.333333);
+  }
+}

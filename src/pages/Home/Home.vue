@@ -1,9 +1,9 @@
 <template>
     <div class="content">
-    <Nav/>
-    <Tab/>
-    <Assure/>
-    <Shop/>
+    <Nav  :Data="homeData.homeNav"/>
+    <Tab :Data="homeData.homeTab"/>
+    <Assure :Data="homeData.policyDescList"/>
+    <Shop :Data="homeData.kingKongModule"/>
     <Three/>
     <Four/>
     <Ten/>
@@ -14,6 +14,11 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
+
+
+
+
 import Ten from '../../componentsFrist/ten'
 import Nav from '../../componentsFrist/nav'
 import Assure from '../../componentsFrist/assure'
@@ -29,6 +34,13 @@ import FooterNav from '../../componentsFrist/footerNav'
         return{
           counter :1
         }
+    },
+    computed:{
+      ...mapState({
+        homeData:state=> state.home.homeData
+      })
+    },
+    mounted(){
     },
     components:{
       Nav,

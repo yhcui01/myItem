@@ -19,7 +19,6 @@
   export default {
           props:['counter'],
           mounted(){
-                  console.log(this.counter,'我是counter')
           }
   }
 </script>

@@ -1,20 +1,19 @@
 <template>
     <div class="first_assure">
-        <span>
-            <img src="./img/安全.png" alt="">网易自营品牌
+        <span v-for="(e,i) in Data" :key="i">
+            <img :src="e.icon" alt="">{{e.desc}}
         </span>
-        <span>
-            <img src="./img/钱.png" alt="">30天无忧退货
-        </span>
-        <span>
-            <img src="./img/易.png" alt="">48小时快速退款
-        </span>
-
+        
     </div>
 </template>
 
 <script type="text/ecmascript-6">
+
   export default {
+    props:['Data'],
+    mounted(){
+      console.log(this.Data,'组件对象')
+    }
   }
 </script>
 
@@ -34,6 +33,7 @@
       line-height 0.6rem
       padding 0.3rem
       img
+        width 0.6rem
         display inline-block
         vertical-align middle
  

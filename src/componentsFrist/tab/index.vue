@@ -3,14 +3,11 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"> <img class="swiper_img"  src="https://yanxuan.nosdn.127.net/ce1d15526689060938a801161e724ebf.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-                <div class="swiper-slide"> <img class="swiper_img"  src="https://yanxuan.nosdn.127.net/ce1d15526689060938a801161e724ebf.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
-                <div class="swiper-slide"> <img class="swiper_img" src="https://yanxuan.nosdn.127.net/ce1d15526689060938a801161e724ebf.jpg?imageView&quality=75&thumbnail=750x0" alt=""></div>
+                <div class="swiper-slide" v-for="(e,i) in Data" :key="i"> <img class="swiper_img"  :src="e" alt=""></div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
             <!-- 如果需要滚动条 -->
-            <div class="swiper-scrollbar"></div>
         </div>
            <!-- <img src="https://yanxuan.nosdn.127.net/ce1d15526689060938a801161e724ebf.jpg?imageView&quality=75&thumbnail=750x0" alt="">-->
 
@@ -22,6 +19,7 @@
 import Swiper from'swiper'
 import 'swiper/dist/css/swiper.css'
   export default {
+    props:['Data'],
     mounted(){
       setTimeout(() => {
        new Swiper('.swiper-container', {

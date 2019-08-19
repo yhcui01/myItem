@@ -1,46 +1,11 @@
 <template>
   <div class="frist_shop">
         <ul class="shop_list">
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
+            <li class="shop_item" v-for="(e,i) in Data.kingKongList" :key="i">
+                <img :src="e.picUrl" alt="">
+                <span>{{e.text}}</span>
             </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-            <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-            <span>个人清洁</span>
-        </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-            <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-            <span>个人清洁</span>
-        </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
-            <li class="shop_item">
-                <img src="https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png" alt="">
-                <span>个人清洁</span>
-            </li>
+
 
 
         </ul>
@@ -49,6 +14,7 @@
 
 <script type="text/ecmascript-6">
   export default {
+      props:['Data']
   }
 </script>
 
