@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    
+    <title>start_cli</title>
+  </head>
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function () {
+        FastClick.attach(document.body);
+      }, false);
+    }
+  </script> 
+
+<style>
+html,
+body,
+header,
+section,
+nav,
+footer,
+article,
+aside,
+canvas,
+details,
+embed,
+div,
+span,
+p,
+a,
+ul,
+ol,
+li,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+tbody,
+thead,
+tfoot,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+em,
+strong,
+br,
+hr,
+select,
+input,
+textarea,
+code,
+pre,
+cite,
+abbr,
+acronym,
+address,
+big,
+applet,
+object,
+iframe,
+blockquote,
+del,
+dfn,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+figure,
+figcaption,
+output,
+ruby,
+summary,
+time,
+mark,
+audio,
+video {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+ul,
+ol {
+    list-style: none;
+}
+input {
+    outline: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+.unSelectedAble {
+    /* 内容不可以被选中 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0,0,0,0.2);
+    -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(125,125,125,0.7);
+    -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125,125,125,0.7);
+    -webkit-border-radius: 6px;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+</style>
+  <body>
+    <noscript>
+      <strong>We're sorry but start_cli doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript" src="./js/vue.js"></script>
+  <script>
+      !(function (doc, win) {
+          // 分辨率Resolution适配
+          var docEl = doc.documentElement,
+              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              recalc = function () {
+                  var clientWidth = docEl.clientWidth;
+                  if (!clientWidth) return;
+                  docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+              };
+  
+          // Abort if browser does not support addEventListener
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+          // 一物理像素在不同屏幕的显示效果不一样。要根据devicePixelRatio来修改meta标签的scale,要注释上面的meta标签
+          (function(){
+              return;
+              var dpr = scale =1;
+              var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+              var devicePixelRatio = win.devicePixelRatio;
+              if (isIPhone) {
+                  // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+                  if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                      dpr = 3;
+                  } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)){
+                      dpr = 2;
+                  } else {
+                      dpr = 1;
+                  }
+              } else {
+                  // 其他设备下，仍旧使用1倍的方案
+                  dpr = 1;
+              }
+              scale = 1 / dpr;
+  
+  //
+              var metaEl = "";
+              metaEl = doc.createElement('meta');
+              metaEl.setAttribute('name', 'viewport');
+              metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+              if (docEl.firstElementChild) {
+                  docEl.firstElementChild.appendChild(metaEl);
+              } else {
+                  var wrap = doc.createElement('div');
+                  wrap.appendChild(metaEl);
+                  doc.write(wrap.innerHTML);
+              }
+          })();
+      })(document, window)
+  
+      !(function(){
+          var width = document.documentElement.clientWidth;
+          var styleNode = document.createElement('style');
+          styleNode.innerHTML = 'html{font-size: '+ width/16 +'px !important;}'
+          document.head.appendChild(styleNode);
+      })();
+  
+      document.addEventListener('touchstart',function(event){
+          event.preventDefault();
+      })
+  
+      var aNodes = document.querySelectorAll('a');
+      for(var i = 0; i < aNodes.length; i++){
+          aNodes[i].addEventListener('touchstart',function(){
+              window.location.href = this.href;
+          });
+      }
+
+  </script>
+</html>

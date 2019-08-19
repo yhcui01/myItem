@@ -1,0 +1,120 @@
+$green = #02a774;
+$yellow = #F5A100;
+$bc = #e4e4e4;
+
+
+
+
+.frist_newperson  //新手礼包  公用
+  box-sizing border-box
+  padding 0.5rem
+  height 12rem
+  width 100%
+  border-bottom 0.3rem solid #eee
+  h3
+    text-align center
+    font-size 1rem
+    font-weight 500
+    line-height 1rem
+  .left
+    height 8rem
+    background #F9E9CF
+    float left
+    box-sizing border-box
+    width 50%
+    border-right 0.1rem solid white
+    h3
+      font-size 1rem
+      font-weight 500
+      line-height 1rem
+    img
+      margin 1rem auto
+      height 5rem
+      width 5rem
+  .right
+    padding 0.2rem
+    height 4rem
+    background #FBE2D3
+    float left
+    box-sizing border-box
+    width 50%
+    border-bottom  0.1rem solid white
+    h3
+      float left
+      font-size 1rem
+      font-weight 500
+      line-height 1rem
+    img
+      float right
+      top 3rem
+      height 3.5rem
+      width 3.5rem
+  .brand_header
+    overflow hidden
+    .left_text
+      float left
+    .right_text
+      float right
+.type_area //版心
+  padding 0.5rem
+  height 85%
+  box-sizing border-box
+.btn //按钮公共样式
+  background red
+  color white
+  text-align center
+  height 1.5rem
+  border none
+  outline none
+  border-radius 0.2rem
+
+// 一像素下边框
+bottom-border-1px($color)
+  position relative
+  border none
+  &:after
+    content ''
+    position absolute
+    left 0
+    bottom 0
+    width 100%
+    height 1px
+    background-color $color
+    transform scaleY(0.5)
+
+// 一像素上边框
+top-border-1px($color)
+  position relative
+  &::before
+    content ''
+    position absolute
+    z-index 200
+    left 0
+    top 0
+    width 100%
+    height 1px
+    background-color $color
+
+//根据像素比缩放1px像素边框
+@media only screen and (-webkit-device-pixel-ratio: 2 )
+  .border-1px
+    &::before
+      transform scaleY(.5)
+
+@media only screen and (-webkit-device-pixel-ratio: 3 )
+  .border-1px
+    &::before
+      transform scaleY(.333333)
+
+//根据像素比来使用 2x图 3x图
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+//清除浮动
+clearFix()
+  &::after
+    content ''
+    display block
+    clear both
