@@ -1,0 +1,1 @@
+export const COMMIT_HOME_DATA = "commitHomeData"

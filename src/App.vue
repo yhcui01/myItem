@@ -11,6 +11,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+//import {  } from 'vuex'
+
 
 import Footer from './componentsFrist/footer'
 import './mokeData/moke'
@@ -19,6 +21,9 @@ import './mokeData/moke'
 components:{
       Footer,
 
+    },
+    mounted(){
+        this.$store.dispatch('getHomeData')
     }
   }
 </script>

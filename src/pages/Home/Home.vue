@@ -9,7 +9,7 @@
     <Ten/>
     <Recmmend/>
     <Advertising/>
-    <FooterNav :counter="counter"/>
+    <FooterNav />
     </div>
 </template>
 
@@ -41,7 +41,8 @@ import FooterNav from '../../componentsFrist/footerNav'
       Four ,
       Advertising, 
       FooterNav  
-    }
+    },
+    
   }
 </script>
 
