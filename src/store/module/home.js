@@ -4,9 +4,11 @@ import { getHomeData } from '../../api'
 
 //type
 import { COMMIT_HOME_DATA } from '../mutation_type'
+
 //state
 const state ={
-  homeData:{}
+  homeData:{},
+  name: ''
 }
 
 //actions
@@ -22,6 +24,9 @@ const actions ={
 const mutations={
   [COMMIT_HOME_DATA](state,{data}){
     state.homeData = data
+  },
+  updataName(state,data){
+    state.name = data
   }
 }
 

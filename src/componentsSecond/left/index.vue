@@ -1,32 +1,41 @@
 <template>
         <div class="two_content_list" ref="list">
             <ul class="two_content_list_contaier">
-            <li class="two_content_item active">
-                推荐专区
+            <li class="two_content_item " :class="{active: i === index}" @click="activeIndex(i)" v-for="(e,i) in Data"  :key="i">
+                {{e}}
             </li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
-            <li class="two_content_item">推荐专区</li>
             </ul>
         </div>
 </template>
 
 <script type="text/ecmascript-6">
 import Bscroll from 'better-scroll'
+
+
   export default {
+    props:['Data'],
+    data(){
+      return{
+          index : 0
+      }
+    },
     mounted(){
       let list = this.$refs.list
+      this.$store.dispatch('getIndexList',this.index)
       let scroll = new Bscroll(list,{
-        scrollY:true
+        scrollY:true,
+        bounce: true, 
+        pullUpLoad: true
       })
+      scroll.on('pullingUp',()=>{
+        scroll.finishPullUp()
+      })
+    },
+    methods:{
+      activeIndex(index){
+          this.index = index
+          this.$store.dispatch('getIndexList',index)
+      }
     }
   }
 </script>

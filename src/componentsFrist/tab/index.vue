@@ -3,7 +3,7 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(e,i) in Data" :key="i"> <img class="swiper_img"  :src="e" alt=""></div>
+                <div class="swiper-slide" v-for="(e,i) in Data" :key="i"> <img class="swiper_img"  v-lazy="e" alt=""></div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -20,17 +20,32 @@ import Swiper from'swiper'
 import 'swiper/dist/css/swiper.css'
   export default {
     props:['Data'],
+
     mounted(){
-      setTimeout(() => {
-       new Swiper('.swiper-container', {
-            loop: true, // 循环模式
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-          })
- 
-      }, 100);
+                this.$nextTick(()=>{
+                      
+                    new Swiper('.swiper-container', {
+                          loop: true, // 循环模式
+                          // 如果需要分页器
+                          pagination: {
+                            el: '.swiper-pagination',
+                          },
+                        })
+                })
+           },
+           watch:{
+             Data(){
+                this.$nextTick(()=>{
+                      
+                    new Swiper('.swiper-container', {
+                          loop: true, // 循环模式
+                          // 如果需要分页器
+                          pagination: {
+                            el: '.swiper-pagination',
+                          },
+                        })
+                })
+             }
            }
   }
 </script>

@@ -1,15 +1,12 @@
 <template>
   <div id="search">
+      <Header>
+    </Header>
         <div class="type_area">
             <h3>热门搜索</h3>
             <div class="search_container">
                 <ul class="search_container_list">
-                    <li class="search_container_item">爆款</li>
-                    <li class="search_container_item active">爆11111款</li>
-                    <li class="search_container_item">爆款爆款爆款爆款爆款爆款爆款爆款爆款</li>
-                    <li class="search_container_item">爆</li>
-                    <li class="search_container_item active">爆款爆款爆款爆款爆款爆款爆款爆款爆款爆款爆款</li>
-                    <li class="search_container_item">爆款</li>
+                    <li class="search_container_item" :class="{active:i%3===0}" v-for="(e,i) in list" :key="i">{{e}}</li>
                 </ul>
             </div>
            <button class="btn" @click="$router.replace('/home')">返回首页</button>
@@ -22,6 +19,19 @@
 
 <script type="text/ecmascript-6">
   export default {
+    data(){
+      return {
+        list:[]
+      }
+    },
+    mounted(){
+        this.$bus.$on('searchMes',({data})=>{
+            this.list = data 
+        })
+    },
+    computed:{
+
+    }
   }
 </script>
 

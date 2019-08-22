@@ -1,7 +1,7 @@
 <template>
     <div class="first_assure">
         <span v-for="(e,i) in Data" :key="i">
-            <img :src="e.icon" alt="">{{e.desc}}
+            <img v-lazy="e.icon" alt="">{{e.desc}}
         </span>
         
     </div>
@@ -12,7 +12,6 @@
   export default {
     props:['Data'],
     mounted(){
-      console.log(this.Data,'组件对象')
     }
   }
 </script>

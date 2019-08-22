@@ -1,178 +1,17 @@
 <template>
         <div class="two_content_right">
             <div>
-                <img src="https://yanxuan.nosdn.127.net/5b4ca33a0205482398006405c1db15e8.jpg?imageView&thumbnail=0x196" alt="">
+                <img v-lazy="  url ? url :'https://yanxuan.nosdn.127.net/5b4ca33a0205482398006405c1db15e8.jpg?imageView&thumbnail=0x196'" alt="">
             </div>
             <div class="product_list_container" ref='list' >
-            <ul class="product_list">
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
+            <ul class="product_list" v-if ="currentArr" >
+
+                <li class="product_item"  v-for="e in currentArr" :key = "e.id"  >
+                    <!-- <h3>{{title}} </h3> -->
+                    <img v-lazy="e.wapBannerUrl" alt="">
+                    <span>{{e.name}}</span>
                 </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                   <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
-                <li class="product_item">
-                    <img src="https://yanxuan.nosdn.127.net/f7d09508d5fa90ef8dfd491d8f7ea225.png?imageView&quality=85&thumbnail=144x144" alt="">
-                    <span>男士服装</span>
-                </li>
+               
 
             </ul>
             </div>
@@ -182,24 +21,71 @@
 
 <script type="text/ecmascript-6">
  import Bscroll from 'better-scroll'
+ import { mapState } from 'vuex' 
   export default {
+      data(){
+          return {
+          }
+      },
+    computed:{
+        url(){
+            return this.currentArr && this.currentArr[1] ? this.currentArr[0].bannerUrl : ''
+        },
+        ...mapState({currentArr:state=>{
+            
+        return state.category.currentArr
+        
+        }})    
+      },
     mounted(){
-      let list = this.$refs.list
-      let scroll = new Bscroll(list,{
-        scrollY:true
-      })
+        this.$nextTick(()=>{
+                    let list = this.$refs.list
+                    this.scrollY =  new Bscroll(list,{
+                    scrollY:true
+                         })
+                         this.scrollY.refresh()    
+        })
+        this.$watch('currentArr',()=>{
+                this.$nextTick(()=>{
+                    if(!this.scrollY){
+                        let list = this.$refs.list
+                            this.scrollY =  new Bscroll(list,{
+                            scrollY:true
+                         })
+                         this.scrollY.refresh()    
+                    }
+               
+                })
+
+        },{deep:true})
+    },
+
+
+    /**
+     * 
+     *     watch:{
+      Data:{
+        handler:(state,oldstate)=>{
+          const list = this.$refs.list
+        new Bscroll(list,{
+          scrollY:true
+        })
+        },deep:true
+      }
     }
+     * 
+     */
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-
      .two_content_right
+        overflow hidden
         float right
         width 80%
         height 100%
         .product_list_container
-            height 100%
+            height 70%
             overflow hidden
         img
           width 100%

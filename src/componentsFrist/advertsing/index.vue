@@ -1,14 +1,33 @@
 <template>
 <div class="first_advertising_content">
             <div class="frist_advertising">
-                <img src="https://yanxuan.nosdn.127.net/09272c0588454c163017bfd19eb932ca.jpg?imageView&thumbnail=750x0&quality=75" alt="">
+                <img v-lazy="Data.bigImg" alt="">
 
             </div>
             <div class="frist_newperson recommend" id="_swiper1">
                 <div class="recommend_bottom">
-                    <div class="recommend_bottom_list_container" >
+                    <div class="recommend_bottom_list_container" ref="list" >
                         <ul class="recommend_bottom_list">
-                            <li class="recommend_bottom_item">
+
+
+                            <li class="recommend_bottom_item" v-for="(e,i) in Data.tabList" :key="i">
+                                <div class="recommend_bottom_item_content">
+                                    <img :src="e.url" alt="">
+                                </div>
+                                <div class="recommend_bottom_item_text">
+                       <span>
+                           {{e.text}}
+                        </span>
+                        
+                                    <span class="red_prise" >
+                                {{e.prise}}
+                            </span>
+                                </div>
+                                <div class="red_prise_footer">
+                                    <span v-if="e.redText">{{e.redText}}</span>
+                                </div>
+                            </li>
+                            <!-- <li class="recommend_bottom_item">
                                 <div class="recommend_bottom_item_content">
                                     <img src="https://yanxuan-item.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png?imageView&quality=65&thumbnail=330x330" alt="">
                                 </div>
@@ -92,24 +111,7 @@
                                 <div class="red_prise_footer">
                                     <span>1件9折</span>
                                 </div>
-                            </li>
-                            <li class="recommend_bottom_item">
-                                <div class="recommend_bottom_item_content">
-                                    <img src="https://yanxuan-item.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png?imageView&quality=65&thumbnail=330x330" alt="">
-                                </div>
-                                <div class="recommend_bottom_item_text">
-                       <span>
-                           风驰电掣 大运摩托
-                            风驰电掣 大运摩托
-                        </span>
-                                    <span class="red_prise">
-                                ￥199
-                            </span>
-                                </div>
-                                <div class="red_prise_footer">
-                                    <span>1件9折</span>
-                                </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
 
@@ -119,7 +121,28 @@
 </template>
 
 <script type="text/ecmascript-6">
+import Bscroll from 'better-scroll'
+import 'swiper/dist/css/swiper.css'
   export default {
+      props:['Data'],
+      mounted(){        
+         let list = this.$refs.list
+            this.$nextTick(()=>{
+              new Bscroll(list,{
+              scrollX:true
+              })
+            })
+      },
+      watch:{
+          Data(){
+        let list = this.$refs.list
+            this.$nextTick(()=>{
+              new Bscroll(list,{
+              scrollX:true
+              })
+            })
+          }
+      }
   }
 </script>
 

@@ -1,14 +1,14 @@
 <template>
 <div class="frist_newperson recommend" id="recommend">
             <div class="brand_header">
-                <span class="left_text">品牌xxxx</span>
+                <span class="left_text">人气推荐</span>
                 <span class="right_text"> 更多》</span>
             </div>
             <div class="recommend_top" >
                 <img src="https://yanxuan-item.nosdn.127.net/89d86a4e463115e366daf841b9bcff46.png?imageView&quality=65&thumbnail=280x280" alt="">
                 <div class="recommend_top_text">
                     <span class="recommend_top_text_title .border-1px">超低优惠</span>
-                    <h4 class="h4">新色  大大大大大大大大大大大大大大大大·大大大大</h4>
+                    <h4 class="h4">新色 奢华植鞣头层水牛皮席 凉席三件套</h4>
                     <span class="statement">三峡水牛头层皮，高端夏凉必备</span>
                     <span class="recommend_top_text_prise">￥1949</span>
                 </div>
@@ -17,7 +17,7 @@
                 <ul class="recommend_bottom_list">
                     <li class="recommend_bottom_item">
                         <div class="recommend_bottom_item_content">
-                            <img src="https://yanxuan-item.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png?imageView&quality=65&thumbnail=330x330" alt="">
+                            <img src="https://yanxuan.nosdn.127.net/d2abd30e0296cdee86f1bdd9242c0937.png?imageView&quality=65&thumbnail=330x330" alt="">
                         </div>
                         <div class="recommend_bottom_item_text">
                        <span>
@@ -29,41 +29,39 @@
                             </span>
                         </div>
                         <div class="red_prise_footer">
-                            <span>1件9折</span>
+                            <span>加价购</span>
                         </div>
                     </li>
                     <li class="recommend_bottom_item">
                         <div class="recommend_bottom_item_content">
-                            <img src="https://yanxuan-item.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png?imageView&quality=65&thumbnail=330x330" alt="">
+                            <img src="https://yanxuan-item.nosdn.127.net/ffaaa0b99d13210e8adc7d81176a53f8.png?imageView&quality=65&thumbnail=330x330" alt="">
                         </div>
                         <div class="recommend_bottom_item_text">
                        <span>
-                           风驰电掣 大运摩托
-                            风驰电掣 大运摩托
+                           男式全棉干爽型宽松短袖T恤...
                         </span>
                             <span class="red_prise">
-                                ￥199
+                                ￥47.4
                             </span>
                         </div>
                         <div class="red_prise_footer">
-                            <span>1件9折</span>
+                            <span>季末特惠</span>
                         </div>
                     </li>
                     <li class="recommend_bottom_item">
                         <div class="recommend_bottom_item_content">
-                            <img src="https://yanxuan-item.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png?imageView&quality=65&thumbnail=330x330" alt="">
+                            <img src="https://yanxuan-item.nosdn.127.net/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=65&thumbnail=330x330" alt="">
                         </div>
                         <div class="recommend_bottom_item_text">
                        <span>
-                           风驰电掣 大运摩托
-                            风驰电掣 大运摩托
+                    日式和风声波式电动牙刷（可...
                         </span>
                             <span class="red_prise">
-                                ￥199
+                                ￥129
                             </span>
                         </div>
                         <div class="red_prise_footer">
-                            <span>1件9折</span>
+                            <span>满减</span>
                         </div>
                     </li>
              </ul>

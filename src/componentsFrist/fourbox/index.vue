@@ -1,42 +1,42 @@
 <template>
  <div class="frist_newperson" id="four">
         <div class="brand_header">
-            <span class="left_text">品牌xxxx</span>
-            <span class="right_text"> 更多》</span>
+            <span class="left_text">品牌制造商直供</span>
+            <span class="right_text"> 更多></span>
         </div>
         <div class="category">
             <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>海外制造</h3>
                     <div class="img">
-                        <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
+                        <img src="https://yanxuan.nosdn.127.net/74e2ea8f81004d0a60f90fc8e4649058.png?imageView&thumbnail=343y260&enlarge=1" alt="">
                     </div>
                 </div>
 
             </div>
                         <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>ck制造</h3>
                     <div class="img">
-                        <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
+                        <img src="https://yanxuan.nosdn.127.net/c097be14110f769d58245cdad73e15c3.png?imageView&thumbnail=343y260&enlarge=1" alt="">
                     </div>
                 </div>
 
             </div>
             <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>秀丽制造</h3>
                     <div class="img">
-                        <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
+                        <img src="https://yanxuan.nosdn.127.net/66a23d776f41cba70d00803a5231124b.png?imageView&thumbnail=343y260&enlarge=1" alt="">
                     </div>
                 </div>
 
             </div>
             <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>Armani制造</h3>
                     <div class="img">
-                        <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
+                        <img src="https://yanxuan.nosdn.127.net/c9e14b08576b6a5e2bc3ef46e0e05d08.png?imageView&thumbnail=343y260&enlarge=1" alt="">
                     </div>
                 </div>
 
@@ -48,6 +48,7 @@
 
 <script type="text/ecmascript-6">
   export default {
+
   }
 </script>
 
@@ -61,7 +62,7 @@
     border-bottom 0.3rem solid #eee
     h3
       text-align center
-      font-size 1rem
+      font-size 0.3rem
       font-weight 500
       line-height 1rem
      .left
@@ -90,7 +91,7 @@
           border-bottom  0.1rem solid white
         h3
           float left
-          font-size 1rem
+          font-size 0.6rem
           font-weight 500
           line-height 1rem
         img

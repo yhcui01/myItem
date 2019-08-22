@@ -7,48 +7,25 @@
             <ul class="ten_top">
                <li class="ten_top_item">
                    <span>热销榜</span>
-                   <img src="https://yanxuan-item.nosdn.127.net/74662d24f6d217b520178c5a6d031457.png?imageView&quality=65&thumbnail=200x200"alt="">
+                   <img src="https://yanxuan.nosdn.127.net/6fd807743e8e25472aca8b6b0b8f3039.png?imageView&quality=65&thumbnail=200x200"alt="">
                </li>
                 <li class="ten_top_item">
                     <span>热销榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/74662d24f6d217b520178c5a6d031457.png?imageView&quality=65&thumbnail=200x200"alt="">
+                    <img src="https://yanxuan-item.nosdn.127.net/cd59ea89bb48cb8d88e30c39b75de6ad.png?imageView&quality=65&thumbnail=200x200"alt="">
                 </li>
             </ul>
             <ul class="ten_middle">
-                <li class="ten_small_item">
+                <li class="ten_small_item" v-for="(e,i) in  listTop || []" :key="i" >
                     <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
+                    <img v-lazy="e" alt="">
                 </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-                </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-                </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-            </li>
+
 
             </ul>
             <ul class="ten_middle">
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-                </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-                </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
-                </li>
-                <li class="ten_small_item">
-                    <span>居家生活榜</span>
-                    <img src="https://yanxuan-item.nosdn.127.net/06388e29fad0b7e8a9d6b1f398e5dcd3.png?imageView&quality=65&thumbnail=200x200" alt="">
+                <li class="ten_small_item" v-for="(e,i) in  listBottom || []" :key="i">
+                    <span>清洗大世界</span>
+                    <img v-lazy="e" alt="">
                 </li>
 
             </ul>
@@ -57,7 +34,36 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex'
   export default {
+      data(){
+          return{
+            //   listBottom:[],
+            //   listTop:[]
+          }
+      },
+        computed:{
+          ...mapState({homeData:state=> state.home.homeData}),
+          listTop(){
+                if(this.homeData  && this.homeData.homeTab){
+                    
+                  return this.homeData.homeTab.slice(0,4) 
+              }
+                return []
+          },
+          listBottom(){
+              if(this.homeData && this.homeData.homeTab){
+                  return this.homeData.homeTab.slice(4,this.homeData.homeTab.length) 
+              }
+                return []
+          }
+
+  },
+        mounted(){
+            // this.listBottom = this.homeData.homeTab.slice(4,homeData.length) 
+            // this.listTop = this.homeData.homeTab.slice(0,4) 
+         
+        }
   }
 </script>
 
@@ -72,7 +78,7 @@
       .ten_top
         .ten_top_item
           box-sizing border-box
-          background #a71d5d
+          background pink
           padding 0.3rem //公用0.5rem
           display flex
           align-items center

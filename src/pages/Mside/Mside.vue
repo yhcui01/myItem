@@ -1,5 +1,10 @@
 <template>
   <div id="mpage"  >
+    <Header>
+      <span slot="left" @click="$router.replace('/home')">回到主页</span>
+      <h3 slot="middle">{{ name ||"你好请登录,"}}</h3>
+      <img class="iconImg2" slot="right" src="../../../static/images/img/易.png" alt="">
+    </Header>
         <div class="type_area">
             <div class="mpage_log">
                 <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
@@ -26,7 +31,14 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { mapState } from 'vuex';
   export default {
+    computed:{
+      ...mapState({
+        name:state=>state.home.name
+      })
+    }
+
   }
 </script>
 

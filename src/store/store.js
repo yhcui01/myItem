@@ -10,6 +10,7 @@ import getters from './getter'
 
 import home from './module/home'
 import category from './module/category'
+import general from './module/general'
 Vue.use(Vuex)  //使用中间键
 
 export default new Vuex.Store({
@@ -18,7 +19,8 @@ export default new Vuex.Store({
   getters,
   modules:{
     home,
-    category
+    category,
+    general
 
   }
 })

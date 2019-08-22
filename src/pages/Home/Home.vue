@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+    <Header> </Header>
     <Nav  :Data="homeData.homeNav"/>
     <Tab :Data="homeData.homeTab"/>
     <Assure :Data="homeData.policyDescList"/>
@@ -8,14 +9,14 @@
     <Four/>
     <Ten/>
     <Recmmend/>
-    <Advertising/>
+    <Advertising v-for="(e,i) in homeData.homeMinTab" :key="i" :Data="homeData.homeMinTab[i]" />
     <FooterNav />
     </div>
 </template>
 
 <script type="text/ecmascript-6">
 import { mapState } from 'vuex'
-
+//homeMinTab
 
 
 

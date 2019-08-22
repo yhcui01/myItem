@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Header/>
+  <div id="app" ref='app'>
+  
     <!-- 头部 -->
 
     <router-view></router-view>
@@ -11,9 +11,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-//import {  } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 
-
+import { reqToken } from  './api'
 import Footer from './componentsFrist/footer'
 import './mokeData/moke'
   export default {
@@ -22,8 +22,13 @@ components:{
       Footer,
 
     },
-    mounted(){
-        this.$store.dispatch('getHomeData')
+     mounted(){
+        reqToken()
+        this.$store.dispatch('testCb')
+        this.$store.dispatch('getHomeData');
+        this.$store.dispatch('getCartgory');
+        this.$store.dispatch('getTabs');
+        this.$store.commit('oneHeight',this.$refs.app.clientHeight)
     }
   }
 </script>

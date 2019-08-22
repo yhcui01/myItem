@@ -1,23 +1,23 @@
 <template>
  <div id="footer">
     <div class="footer_tabber ">
-        <span class="footer_item" :class="{active:$route.path === '/home'}"  @click="$router.push('/home')"> 
+        <span class="footer_item" :class="{active:$route.path.indexOf('/home') != -1 }"  @click="$router.push('/home')"> 
             <img src="../../../static/images/img/家.png" alt="">
             <span>首页</span>
         </span>
-        <span class="footer_item" :class="{active:$route.path === '/category'}"  @click="$router.push('/category')"> 
+        <span class="footer_item" :class="{active:$route.path .indexOf('/category') != -1 }"  @click="$router.push('/category')"> 
             <img src="../../../static/images/img/分类.png" alt="">
             <span>分类</span>
         </span> 
-        <span class="footer_item" :class="{active:$route.path === '/goods'}"  @click="$router.replace('/goods')"> 
+        <span class="footer_item" :class="{active:$route.path .indexOf('/goods') != -1 }"  @click="$router.replace('/goods')"> 
             <img src="../../../static/images/img/照片.png" alt="">
             <span>实物</span>
         </span> 
-        <span class="footer_item"  :class="{active:$route.path === '/shopcart'}"  @click="$router.replace('/shopcart')"> 
+        <span class="footer_item"  :class="{active:$route.path .indexOf('/shopcart') != -1 }"  @click="$router.replace('/shopcart')"> 
             <img src="../../../static/images/img/购物车-23.png" alt="">
             <span>购物车</span>
         </span> 
-        <span class="footer_item" :class="{active:$route.path === '/mside'}" @click="$router.replace('/mside')"> 
+        <span class="footer_item" :class="{active:$route.path .indexOf('/mside') != -1 }" @click="$router.replace('/mside')"> 
             <img src="../../../static/images/img/个人中心.png">
             <span>个人</span>
         </span> 

@@ -251,14 +251,11 @@ body {
               }
           })();
       })(document, window)
-  
-      !(function(){
-          var width = document.documentElement.clientWidth;
+      function refreshRem(){
+    var width = document.documentElement.clientWidth;
           var styleNode = document.createElement('style');
           styleNode.innerHTML = 'html{font-size: '+ width/16 +'px !important;}'
           document.head.appendChild(styleNode);
-      })();
-  
       document.addEventListener('touchstart',function(event){
           event.preventDefault();
       })
@@ -269,6 +266,22 @@ body {
               window.location.href = this.href;
           });
       }
+ }
+
+      window.addEventListener('pageshow',()=>{
+        refreshRem()
+      })
+      window.addEventListener('resize',()=>{
+
+
+        if(this.setTimeoutId){
+            clearTimeout(this.setTimeoutId)
+        }
+          this.setTimeoutId = setTimeout(()=>{
+            refreshRem() 
+          },500)
+      })
+
 
   </script>
 </html>

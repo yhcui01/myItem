@@ -1,12 +1,10 @@
 <template>
   <div class="frist_shop">
         <ul class="shop_list">
-            <li class="shop_item" v-for="(e,i) in Data.kingKongList" :key="i">
-                <img :src="e.picUrl" alt="">
+            <li class="shop_item" v-for="(e,i) in (Data ? Data.KingKongList : list)" :key="i">
+                <img v-lazy="e.picUrl" alt="">
                 <span>{{e.text}}</span>
             </li>
-
-
 
         </ul>
     </div>
@@ -14,7 +12,14 @@
 
 <script type="text/ecmascript-6">
   export default {
-      props:['Data']
+      props:['Data'],
+      data(){
+          return{
+              list:[]
+          }
+      },
+    mounted(){
+      },
   }
 </script>
 

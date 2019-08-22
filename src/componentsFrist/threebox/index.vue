@@ -1,6 +1,6 @@
 <template>
 <div class="frist_newperson" id="tree">
-        <h3>XXXX</h3>
+        <h3>新人专享</h3>
         <div class="category">
             <div class="left">
                 <h3>新人专享红包</h3>
@@ -8,7 +8,7 @@
             </div>
             <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>时尚装</h3>
                     <div class="img">
                         <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
                     </div>
@@ -17,9 +17,9 @@
             </div>
             <div class="right">
                 <div>
-                    <h3>xxx</h3>
+                    <h3>性感装</h3>
                     <div class="img">
-                        <img src="https://yanxuan-item.nosdn.127.net/5a0d395159cf7f51d48c45599b96df3f.png?imageView&thumbnail=200x200&quality=75" alt="">
+                        <img src="https://yanxuan-item.nosdn.127.net/56b33a41a3ce8caf3ac86b7ec6c05faa.png?imageView&quality=65&thumbnail=330x330" alt="">
                     </div>
                 </div>
 
