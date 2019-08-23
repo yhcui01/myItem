@@ -5,10 +5,10 @@
       <h3 slot="middle">点击分类选择商品~~</h3>
       <img class="iconImg2" slot="right" src="../../../../static/images/img/易.png" alt="">
     </Header>
-          <Adress  v-if="($route.params.page-0+5)%5==1" :Data="$route.params.data"> </Adress>
-          <Recmmend v-else-if="true"></Recmmend>
-          <Threebox  v-else-if="($route.params.page-0+5)%5 ==2"> </Threebox>
-           <Fourbox v-else-if="($route.params.page-0+5)%5 ==4"></Fourbox>
+          <Adress  v-if="page==1" :Data="$route.params.data"> </Adress>
+          <Recmmend v-else-if="page ==2 || page == 4 "></Recmmend>
+          <Threebox  v-else-if="page==3 || page == 5"> </Threebox>
+           <Fourbox v-else></Fourbox>
   </div>
 </template>
 
@@ -19,13 +19,23 @@ import Ten from '../../../componentsFrist/ten'
 import Fourbox from '../../../componentsFrist/fourbox'
 import Recmmend from '../../../componentsFrist/recmmend'
   export default {
+    data(){
+      return {
+      }
+    },
     components:{
       Adress,
       Threebox,
       Fourbox,
       Recmmend
     },
+    computed:{
+      page(){
+        return this.$route.params.id
+      }
+    },
     mounted(){
+      console.log(this.$route)
     }
   }
 </script>

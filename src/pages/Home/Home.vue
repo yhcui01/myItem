@@ -1,7 +1,7 @@
 <template>
     <div class="content">
     <Header> </Header>
-    <Nav  :Data="homeData.homeNav"/>
+    <Nav v-if="homeData.homeNav" :Data="homeData.homeNav"/>
     <Tab :Data="homeData.homeTab"/>
     <Assure :Data="homeData.policyDescList"/>
     <Shop :Data="homeData.kingKongModule"/>

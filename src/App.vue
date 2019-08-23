@@ -4,9 +4,9 @@
     <!-- 头部 -->
 
     <router-view></router-view>
+    <Footer v-if="!$route.meta.noneFooter"/>
     
     <!-- 底部 -->
-    <Footer v-if="!$route.meta.noneFooter"/>
   </div>
 </template>
 

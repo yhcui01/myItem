@@ -12,7 +12,7 @@
 </div>
        <div class="first_nav" ref="nav">
         <ul class="nav_list" >
-            <li class="nav_item " :class="{active:i-0===isIndex}" v-for="(e,i) in Data" :key="i" @click.native="active(i)" >{{e}}</li>
+            <li class="nav_item " :class="{active:i-0===isIndex}" v-for="(e,i) in Data" :key="i" @click="active(i)" >{{e}}</li>
 
         </ul>
         <span class="iconfont" id="menuBtn"  @click="isShow=!isShow" ><img   src="./img/下箭头.png"  ></span>

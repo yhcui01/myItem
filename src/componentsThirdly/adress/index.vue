@@ -24,7 +24,6 @@ import Bscroll from 'better-scroll'
 import { mapState } from 'vuex';
 
   export default {
-    props:['Data'],
     data(){
         return{
             value:[],
@@ -32,7 +31,8 @@ import { mapState } from 'vuex';
         },
         computed:{
           ...mapState({
-              oneHeight:state=>state.general.oneHeight
+              oneHeight:state=>state.general.oneHeight,
+              Data:state=>state.general.tabList
           }),
           lazy(){
             //比例

@@ -20,7 +20,7 @@
                 </div> 
                     <div class="input_list" v-show ="!nonePhone">
                     <button class="get_code" v-if="nonePhone">获取验证码</button>
-                    <input type="email" v-model="phone"  name="email"  :placeholder="'请输入邮箱'"   v-validate="'required|email'" />
+                    <input type="text" v-model="phone"  name="email"  :placeholder="'请输入邮箱'"   v-validate="'required|email'" />
                     <span  style="color: red;">{{errors.first('email')}}</span>
                     <input type="password"  v-model="password"  name='password' :placeholder="'输入密码'" v-validate =" {required : true , min:5}"/>
                     <span  style="color: red;">{{errors.first('password')}}</span>
@@ -44,7 +44,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-
+import { Toast } from 'mint-ui'
 
 import { reqLog } from '../../api'
   export default {
@@ -69,10 +69,14 @@ import { reqLog } from '../../api'
            let formData = ['email','keycode']
           this.$validator.validateAll(formData)
           let {  phone,password,captcha,keyCode,nonePhone } = this 
-          if(!nonePhone){
+          if(!nonePhone && /^1[23456789]\d{9}$/.test(phone)){
+            
             let result = await reqLog({pwd:password,captcha,name:phone})
+
             this.$store.commit('updataName',result.data.name || "没有储存的信息")
             localStorage.setItem('tokenUser',result.data.token)
+          }else{
+            Toast('手机号有误')
           }
 
         },

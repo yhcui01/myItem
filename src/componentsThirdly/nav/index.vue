@@ -2,7 +2,7 @@
         <div class="entity_nav" ref="list">
             <ul class="entity_nav_list" ref="listContainer">
                 <li class="entity_nav_item "
-                  @click="goto(i)"
+                  @click="goto(i,tabList)"
                   :class="{active: i === index}" v-for="(e,i) in Data " :key="e.id">
                   {{e.tabName}}</li>
             </ul>
@@ -37,30 +37,32 @@ import { mapState } from 'vuex'
     watch:{
     },
     methods:{
-      goto(index){
+      goto(index,b){
           this.index = index
           let page = index+5
           let {tabList} = this
-          if(page%5===0){
-               this.$router.replace({name:'good',params:{page:index,data:tabList}})
-              }
-              else if(page%5 ===1){
-              this.$router.replace({name:'good2',params:{page:index,data:tabList}})
-                //假
+          //传不过去
+          this.$router.replace({name:'good',params:{id:index,page:index,data:tabList}})
+          // this.$router.replace({path:'/goods/good',query:{id:index,page:index,data:tabList}})
+          // if(page%5===0){
+          //      this.$router.replace({name:'good',params:{page:index,data:tabList}})
+          //     }
+          //     else if(page%5 ===1){
+          //     this.$router.replace({name:'good2',params:{page:index,data:tabList}})
+          //       //假
                 
-              }  else if(page%5 ===2){
-                 this.$router.replace({name:'good3',params:{page:index,data:tabList}})
-                 //假
-              }  else if(page%5 ===3){
-                //假
-                this.$router.replace({name:'good4',params:{page:index,data:tabList}})
-              }  else if(page%5 ===4){
-                this.$router.replace({name:'good5',params:{page:index,data:tabList}})
-                //直接进else  数据不同
-              }
-              else{
-                debugger
-              }
+          //     }  else if(page%5 ===2){
+          //        this.$router.replace({name:'good3',params:{page:index,data:tabList}})
+          //        //假
+          //     }  else if(page%5 ===3){
+          //       //假
+          //       this.$router.replace({name:'good4',params:{page:index,data:tabList}})
+          //     }  else if(page%5 ===4){
+          //       this.$router.replace({name:'good5',params:{page:index,data:tabList}})
+          //       //直接进else  数据不同
+          //     }
+          //     else{
+          //     }
 
       },
 

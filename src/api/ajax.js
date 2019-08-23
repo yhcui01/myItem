@@ -18,6 +18,7 @@ axios.interceptors.request.use((config)=>{
 
 
 axios.interceptors.response.use(({data})=>{
+
   if(data.data.name){
     store.commit('updataName',data.data.name)
   }
