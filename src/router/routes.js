@@ -48,7 +48,6 @@ export default [
         component:Good,
         name:'good'
       },
-
       {
         path:'',
         redirect:'/goods/good/1'
