@@ -9,13 +9,4 @@ module.exports = {
           '^/api': ''
         }
       },
-      '/myapi':{
-        target:"http://localhost:4000",//代理目标路径
-        changeOrigin:true,
-        pathRewrite:{
-          '^/myapi':'' //路径重写
-        }
-      }
-    }
-  }
 }
